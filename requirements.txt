@@ -1,0 +1,5 @@
+matplotlib==3.5.3
+numpy==1.20.3
+opencv_python==4.5.5.64
+Pillow==9.2.0
+PyMatting==1.1.8
