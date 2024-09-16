@@ -18,7 +18,7 @@ def show(img):
 
 
 # this should be the folder containing images to be processed
-work_dir = r'C:\Users\PKU\Desktop\white_bg_imgs'
+work_dir = r'C:\Users\PKU\Desktop\H\fmri_0921\Img_vault\FOB2023short'
 os.chdir(work_dir)
 
 new_folder = r'mask'
@@ -27,11 +27,11 @@ try:
 except:
     print('new folder already exists! ')
 
-pic_list = [f for f in glob.glob(r"*.tif")]
+pic_list = [f for f in glob.glob(r"*.png")]
 
-resize_times = 5
+resize_times = 2
 
-for idx_pic_name in range(496, len(pic_list)):
+for idx_pic_name in range(0, len(pic_list)):
     i_pic_name = pic_list[idx_pic_name]
 
     out_pic_name = i_pic_name[0:3]
@@ -46,7 +46,7 @@ for idx_pic_name in range(496, len(pic_list)):
 
     img_cvt = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    thresh = 254
+    thresh = 128
     ret, thresh_img = cv2.threshold(img_cvt, thresh, 255, cv2.THRESH_BINARY)
 
     mask = cv2.bitwise_not(thresh_img)

@@ -19,7 +19,7 @@ def show(img):
     cv2.destroyAllWindows()
 
 
-work_dir = r'C:\Users\PKU\Desktop\H\fmri_0921\Img_vault\FOB2023short'
+work_dir = r'Q:\data\project_data\beh_scene\select_blur_face\monkey'
 os.chdir(work_dir)
 
 new_folder = r'bg_removed'
@@ -31,7 +31,7 @@ except:
 pic_list = [f for f in glob.glob(r"resized_*.png")]
 
 resize_times = 5
-thresh = 128
+thresh = 5
 
 for idx_pic_name in range(0, len(pic_list)):
     i_pic_name = pic_list[idx_pic_name]
